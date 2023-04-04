@@ -1,0 +1,17 @@
+CREATE DATABASE zoo;
+
+CREATE TABLE animal (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  race VARCHAR(255) NOT NULL,
+  cage_id INT NOT NULL,
+  birthdate DATE NOT NULL,
+  country VARCHAR(255) NOT NULL,
+  FOREIGN KEY (cage_id) REFERENCES cage(id)
+);
+
+CREATE TABLE cage (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  superficie FLOAT NOT NULL,
+  capacite INT NOT NULL
+);
